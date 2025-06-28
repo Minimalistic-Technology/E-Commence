@@ -400,18 +400,18 @@ const Cart: React.FC = () => {
                                   whileHover={{ scale: 1.1 }}
                                   whileTap={{ scale: 0.9 }}
                                   onClick={() => updateCartQuantity(item!.id, item!.quantity - 1)}
-                                  className="p-1.5 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                                  className="p-1.5 text-gray-600 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
                                 >
                                   <Minus size={16} />
                                 </motion.button>
-                                <span className="font-medium text-lg min-w-[2rem] text-center">
+                                <span className="font-medium text-gray-600 text-lg min-w-[2rem] text-center">
                                   {item!.quantity}
                                 </span>
                                 <motion.button
                                   whileHover={{ scale: 1.1 }}
                                   whileTap={{ scale: 0.9 }}
                                   onClick={() => updateCartQuantity(item!.id, item!.quantity + 1)}
-                                  className="p-1.5 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                                  className="p-1.5 text-gray-600 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
                                 >
                                   <Plus size={16} />
                                 </motion.button>
@@ -475,7 +475,7 @@ const Cart: React.FC = () => {
                       <motion.button
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        onClick={handleProceedToCheckout}
+                        onClick={() => window.location.href = '/checkout'}
                         className="w-full bg-blue-500 text-white py-3 px-6 rounded-xl font-semibold hover:bg-blue-600 transition-colors mb-3 flex items-center justify-center space-x-2"
                       >
                         <span>Proceed to Checkout</span>

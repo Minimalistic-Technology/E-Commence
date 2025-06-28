@@ -431,7 +431,7 @@ function App() {
                 {/* Sign In Link */}
                 <p className="text-center text-sm text-gray-600 mt-6">
                   Don't have an account?{' '}
-                  <a href="#" className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-pink-600 font-semibold underline decoration-1 underline-offset-2 transition-all duration-300">
+                  <a href="/signin" className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-pink-600 font-semibold underline decoration-1 underline-offset-2 transition-all duration-300">
                     Sign in here
                   </a>
                 </p>

@@ -234,8 +234,8 @@ function App() {
           {/* Sign In Link */}
           <p className="text-center text-sm text-slate-600 mt-6">
             Already have an account?{' '}
-            <a href="#" className="text-blue-600 hover:text-blue-700 font-semibold underline decoration-1 underline-offset-2 transition-colors">
-              Sign in
+            <a href="logIn" className="text-blue-600 hover:text-blue-700 font-semibold underline decoration-1 underline-offset-2 transition-colors">
+              Log In
             </a>
           </p>
         </div>

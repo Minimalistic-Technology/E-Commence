@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Heart, ShoppingCart, Eye } from 'lucide-react';
+import { useApp } from '../context/AppContext';
 
 interface Product {
   id: number;
@@ -12,33 +13,21 @@ interface Product {
   description: string;
 }
 
-interface CartItem {
-  id: number;
-  quantity: number;
-  product: Product;
-}
-
 interface ProductCardProps {
   product: Product;
   index: number;
   viewMode: 'grid' | 'list';
   onProductClick?: (product: Product) => void;
-  favorites: Set<number>;
-  cart: CartItem[];
-  onToggleFavorite: (id: number) => void;
-  onAddToCart: (product: Product) => void;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ 
   product, 
   index, 
   viewMode, 
-  onProductClick,
-  favorites,
-  cart,
-  onToggleFavorite,
-  onAddToCart
+  onProductClick
 }) => {
+  const { favorites, cart, toggleFavorite, addToCart } = useApp();
+
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
@@ -65,13 +54,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    onAddToCart(product);
+    addToCart(product);
   };
 
   const handleToggleFavorite = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    onToggleFavorite(product.id);
+    toggleFavorite(product.id);
   };
 
   const handleProductClick = () => {
@@ -80,7 +69,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
     }
   };
 
-  // Check if product is in cart using array find method
+  // Check if product is in cart
   const cartItem = cart.find(item => item.id === product.id);
   const isInCart = !!cartItem;
 

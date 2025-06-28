@@ -301,7 +301,7 @@ const Checkout: React.FC = () => {
                           type="text"
                           value={shippingAddress.firstName}
                           onChange={(e) => handleInputChange('firstName', e.target.value)}
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full pl-10 pr-4 py-3 text-gray-600 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                           placeholder="Enter first name"
                         />
                       </div>
@@ -317,7 +317,7 @@ const Checkout: React.FC = () => {
                           type="text"
                           value={shippingAddress.lastName}
                           onChange={(e) => handleInputChange('lastName', e.target.value)}
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full pl-10 pr-4 py-3 text-gray-600 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                           placeholder="Enter last name"
                         />
                       </div>
@@ -333,7 +333,7 @@ const Checkout: React.FC = () => {
                           type="email"
                           value={shippingAddress.email}
                           onChange={(e) => handleInputChange('email', e.target.value)}
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full pl-10 pr-4 py-3 text-gray-600 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                           placeholder="Enter email address"
                         />
                       </div>
@@ -349,7 +349,7 @@ const Checkout: React.FC = () => {
                           type="tel"
                           value={shippingAddress.phone}
                           onChange={(e) => handleInputChange('phone', e.target.value)}
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full pl-10 pr-4 py-3 text-gray-600 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                           placeholder="Enter phone number"
                         />
                       </div>
@@ -365,7 +365,7 @@ const Checkout: React.FC = () => {
                           type="text"
                           value={shippingAddress.address}
                           onChange={(e) => handleInputChange('address', e.target.value)}
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full pl-10 pr-4 py-3 text-gray-600 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                           placeholder="Enter street address"
                         />
                       </div>
@@ -379,7 +379,7 @@ const Checkout: React.FC = () => {
                         type="text"
                         value={shippingAddress.city}
                         onChange={(e) => handleInputChange('city', e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-4 py-3 text-gray-600 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Enter city"
                       />
                     </div>
@@ -392,7 +392,7 @@ const Checkout: React.FC = () => {
                         type="text"
                         value={shippingAddress.state}
                         onChange={(e) => handleInputChange('state', e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-4 py-3 text-gray-600 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Enter state"
                       />
                     </div>
@@ -405,7 +405,7 @@ const Checkout: React.FC = () => {
                         type="text"
                         value={shippingAddress.zipCode}
                         onChange={(e) => handleInputChange('zipCode', e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-4 py-3 text-gray-600 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Enter ZIP code"
                       />
                     </div>
@@ -417,7 +417,7 @@ const Checkout: React.FC = () => {
                       <select
                         value={shippingAddress.country}
                         onChange={(e) => handleInputChange('country', e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-4 py-3 text-gray-600 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                       >
                         <option value="United States">United States</option>
                         <option value="Canada">Canada</option>
@@ -490,7 +490,7 @@ const Checkout: React.FC = () => {
                               type="text"
                               value={cardDetails.number}
                               onChange={(e) => handleCardInputChange('number', e.target.value)}
-                              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                              className="w-full pl-10 pr-4 py-3 text-gray-600 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                               placeholder="1234 5678 9012 3456"
                             />
                           </div>
@@ -506,7 +506,7 @@ const Checkout: React.FC = () => {
                               type="text"
                               value={cardDetails.expiry}
                               onChange={(e) => handleCardInputChange('expiry', e.target.value)}
-                              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                              className="w-full pl-10 pr-4 py-3 text-gray-600 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                               placeholder="MM/YY"
                             />
                           </div>
@@ -522,7 +522,7 @@ const Checkout: React.FC = () => {
                               type="text"
                               value={cardDetails.cvv}
                               onChange={(e) => handleCardInputChange('cvv', e.target.value)}
-                              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                              className="w-full pl-10 pr-4 py-3 text-gray-600 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                               placeholder="123"
                             />
                           </div>
@@ -536,7 +536,7 @@ const Checkout: React.FC = () => {
                             type="text"
                             value={cardDetails.name}
                             onChange={(e) => handleCardInputChange('name', e.target.value)}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full px-4 py-3 text-gray-600 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder="Enter cardholder name"
                           />
                         </div>
@@ -582,7 +582,7 @@ const Checkout: React.FC = () => {
                   <div className="border-t pt-6 mb-6">
                     <h4 className="font-semibold text-gray-900 mb-3">Shipping Address</h4>
                     <div className="bg-gray-50 p-4 rounded-lg">
-                      <p className="font-medium">{shippingAddress.firstName} {shippingAddress.lastName}</p>
+                      <p className="text-gray-900 font-medium">{shippingAddress.firstName} {shippingAddress.lastName}</p>
                       <p className="text-gray-600">{shippingAddress.address}</p>
                       <p className="text-gray-600">{shippingAddress.city}, {shippingAddress.state} {shippingAddress.zipCode}</p>
                       <p className="text-gray-600">{shippingAddress.country}</p>
@@ -595,9 +595,9 @@ const Checkout: React.FC = () => {
                   <div className="border-t pt-6">
                     <h4 className="font-semibold text-gray-900 mb-3">Payment Method</h4>
                     <div className="bg-gray-50 p-4 rounded-lg">
-                      <div className="flex items-center space-x-3">
+                      <div className="flex text-gray-600 items-center space-x-3">
                         {paymentMethods.find(pm => pm.id === selectedPaymentMethod)?.icon}
-                        <span className="font-medium">
+                        <span className="text-gray-600 font-medium">
                           {paymentMethods.find(pm => pm.id === selectedPaymentMethod)?.name}
                         </span>
                       </div>
@@ -676,7 +676,7 @@ const Checkout: React.FC = () => {
                       type="text"
                       value={promoCode}
                       onChange={(e) => setPromoCode(e.target.value)}
-                      className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full pl-10 pr-4 py-2 text-gray-600 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="Promo code"
                       disabled={promoApplied}
                     />
