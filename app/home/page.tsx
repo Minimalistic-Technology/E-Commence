@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import {
   Play,
@@ -23,6 +24,7 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({ onShopNow }) => {
+  const router = useRouter();
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, -50]);
   const y2 = useTransform(scrollY, [0, 300], [0, -100]);
@@ -215,7 +217,7 @@ const Home: React.FC<HomeProps> = ({ onShopNow }) => {
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0,0,0,0.2)" }}
               whileTap={{ scale: 0.95 }}
-              onClick={onShopNow}
+              onClick={() => router.push('/logIn')}
               className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center space-x-2 shadow-xl hover:shadow-2xl transition-all duration-300"
             >
               <ShoppingBag size={24} />
@@ -704,7 +706,7 @@ const Home: React.FC<HomeProps> = ({ onShopNow }) => {
             viewport={{ once: true }}
             whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0,0,0,0.3)" }}
             whileTap={{ scale: 0.95 }}
-            onClick={onShopNow}
+            onClick={() => router.push('/logIn')}
             className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-12 py-4 rounded-full font-semibold text-lg flex items-center space-x-2 mx-auto shadow-xl hover:shadow-2xl transition-all duration-300"
           >
             <ShoppingBag size={24} />

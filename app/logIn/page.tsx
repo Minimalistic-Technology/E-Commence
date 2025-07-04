@@ -1,5 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import axios from 'axios';
+import api from '@/utils/api';
 import { 
   Eye, 
   EyeOff, 
@@ -25,6 +28,7 @@ import {
 } from 'lucide-react';
 
 function App() {
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -59,6 +63,28 @@ function App() {
   };
 
   const passwordStrength = getPasswordStrength(formData.password);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+    const response = await api.post("/login", {
+      email: formData.email,
+      password: formData.password
+    });
+
+    console.log("Login successful", response.data);
+    router.push('/');
+  } catch (error: any) {
+    if (axios.isAxiosError(error)) {
+      alert(error.response?.data?.message || "Login failed!");
+      console.error("Axios error:", error.response?.data);
+    } else {
+      alert("Something went wrong. Please try again later.");
+      console.error("Unknown error:", error);
+    }
+  }
+};
 
   const floatingIcons = [
     { Icon: ShoppingBag, color: 'text-blue-500', delay: 0 },
@@ -261,7 +287,7 @@ function App() {
                 {/* Header */}
                 <div className="text-center mb-8">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl mb-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group cursor-pointer">
-                    <User className="w-8 h-8 text-white group-hover:animate-bounce" />
+                    <User  className="w-8 h-8 text-white group-hover:animate-bounce" />
                     <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-pulse"></div>
                   </div>
                   <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-2">
@@ -271,7 +297,7 @@ function App() {
                 </div>
 
                 {/* Login Form */}
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   {/* Full Name Field */}
                   {/* <div className="space-y-2 group">
                     <label className="block text-sm font-semibold text-gray-700 mb-1 group-hover:text-blue-600 transition-colors">
@@ -279,7 +305,7 @@ function App() {
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <User className="h-5 w-5 text-gray-800 group-hover:text-blue-500 transition-colors" />
+                        <User  className="h-5 w-5 text-gray-800 group-hover:text-blue-500 transition-colors" />
                       </div>
                       <input
                         type="text"
@@ -487,4 +513,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 
